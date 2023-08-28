@@ -1,33 +1,33 @@
-
+import { Wrapper, Foto, List, ListItem,FotoCard, TextName, StatsNumber} from "./SocialProfile.styled"
 export const SocialProfile = ({ username, tag, location, avatar, stats}) => {
   return ( 
-    <div class="profile">
-  <div class="description">
-  <img
-  src={avatar}
-  alt={username}
-  style={{ height: '80px' }}
-  />
-    <p class="name">{username}</p>
-    <p class="tag">{tag}</p>
-    <p class="location">{location}</p>
-  </div>
+<Wrapper>
+  <FotoCard>
+    <Foto
+    src={avatar}
+    alt={username}
+    
+    />
+      <TextName>{username}</TextName>
+      <p>{tag}</p>
+      <p>{location}</p>
+  </FotoCard>
 
-  <ul class="stats">
-    <li>
-      <span class="label">Followers</span>
-      <span class="quantity">{stats.followers}</span>
-    </li>
-    <li>
-      <span class="label">Views</span>
-      <span class="quantity">{stats.views}</span>
-    </li>
-    <li>
-      <span class="label">Likes</span>
-      <span class="quantity">{stats.likes}</span>
-    </li>
-  </ul>
-</div>
+  <List>
+    <ListItem>
+      <span>Followers</span>
+      <StatsNumber>{stats.followers}</StatsNumber>
+    </ListItem>
+    <ListItem>
+      <span>Views</span>
+      <StatsNumber>{stats.views}</StatsNumber>
+    </ListItem>
+    <ListItem>
+      <span>Likes</span>
+      <StatsNumber>{stats.likes}</StatsNumber>
+    </ListItem>
+  </List>
+</Wrapper>
   )
     
 }

@@ -1,8 +1,8 @@
-
+import { SectionStatic, TitleText } from "./StaticSection.styled";
     export const StaticSection = ({ title, stats }) => {
         return (
-          <>
-            {title && <h2>{title}</h2>}
+          <SectionStatic>
+            {title && <TitleText>{title}</TitleText>}
             <ul>
               {stats.map(({ id, label, percentage }) => (
                 <li key={id}>
@@ -11,6 +11,6 @@
                 </li>
               ))}
             </ul>
-          </>
+          </SectionStatic>
         );
       };
