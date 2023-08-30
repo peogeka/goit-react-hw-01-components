@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Wrapper, Foto, List, ListItem,FotoCard, TextName, StatsNumber} from "./SocialProfile.styled"
 export const SocialProfile = ({ username, tag, location, avatar, stats}) => {
   return ( 
@@ -29,5 +30,13 @@ export const SocialProfile = ({ username, tag, location, avatar, stats}) => {
   </List>
 </Wrapper>
   )
-    
+  
 }
+
+SocialProfile.propTypes = {
+  username: PropTypes.string,
+  tag: PropTypes.string,
+  location: PropTypes.string,
+  avatar: PropTypes.string,
+  stats: PropTypes.object,
+};

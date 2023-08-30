@@ -1,16 +1,22 @@
-import { SectionStatic, TitleText } from "./StaticSection.styled";
+import PropTypes from 'prop-types';
+import { SectionStatic, TitleText, SectionList, SectionItem } from "./StaticSection.styled";
     export const StaticSection = ({ title, stats }) => {
         return (
           <SectionStatic>
             {title && <TitleText>{title}</TitleText>}
-            <ul>
+            <SectionList>
               {stats.map(({ id, label, percentage }) => (
-                <li key={id}>
+                <SectionItem key={id}>
                   <span>{label}</span>
                   <span>{percentage}%</span>
-                </li>
+                </SectionItem>
               ))}
-            </ul>
+            </SectionList>
           </SectionStatic>
         );
+      };
+
+      StaticSection.propTypes = {
+        title: PropTypes.string,
+        stats: PropTypes.arrayOf(PropTypes.object).isRequired,
       };
